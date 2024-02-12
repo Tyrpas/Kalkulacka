@@ -1,0 +1,42 @@
+﻿@page "/calcv2"
+
+<PageTitle>CalcV2</PageTitle>
+
+<h1>Základní matematické operace</h1>
+<hr />
+<label>Číslo 1 <input @bind="cislo1" /></label>
+<br />
+<label>Číslo 2 <input @bind="cislo2" /></label>
+<div>
+    <button @onclick="Soucet">Součet</button>
+    <button @onclick="Rozdil">Rozdíl</button>
+    <button @onclick="Soucin">Součin</button>
+    <button @onclick="Podil">Podíl</button>
+</div>
+<br />
+<div>
+    <label>Výsledek <input @bind="vysledek" readonly /></label>
+</div>
+
+@code {
+    private short cislo1; //promné mají první ísmeno malé
+    private short cislo2;
+    private short vysledek;
+
+    private void Soucet() //název metody musí mít první písmeno velké
+    {
+        vysledek = (short)(cislo1 + cislo2);
+    }
+    private void Rozdil()
+    {
+        vysledek = (short)(cislo1 - cislo2);
+    }
+    private void Soucin()
+    {
+        vysledek = (short)(cislo1 * cislo2);
+    }
+    private void Podil()
+    {
+        vysledek = (short)(cislo1 / cislo2);
+    }
+}
