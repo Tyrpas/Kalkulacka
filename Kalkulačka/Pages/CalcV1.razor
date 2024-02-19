@@ -17,15 +17,28 @@
 <div>
     <label>Výsledek <input @bind="vysledek" readonly /></label>
 </div>
+<br />
+<label> <input type="checkbox" @bind-value = "kontrolaPreteceni"/> Kontrola přetečení</label>
 
 @code {
-    private double cislo1; //promné mají první ísmeno malé
+    private double cislo1; //proměné mají první písmeno malé
     private double cislo2;
     private double vysledek;
+    private bool kontrolaPreteceni = false;
 
     private void Soucet() //název metody musí mít první písmeno velké 
     {
-        vysledek = cislo1 + cislo2;
+        if (kontrolaPreteceni)
+        {
+            checked
+            {
+                vysledek = (short)(cislo1 + cislo2);
+            }
+        }
+        else
+        {
+            vysledek = (short)(cislo1 + cislo2);
+        }
     }
     private void Rozdil()
     {
